@@ -35,13 +35,14 @@ export const POST = async (req: NextRequest) => {
 
     return NextResponse.json({
       status: 200,
-      message: "creating all User",
+      message: "creating all products",
       data: products,
     });
-  } catch (error) {
+  } catch (error:any) {
     return NextResponse.json({
       status: 404,
-      message: "Error",
+      errorMessage: `${error.message}`,
+      errorStack: error
     });
   }
 };

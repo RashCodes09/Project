@@ -19,6 +19,10 @@ const userModel = new Schema<iUserData>(
     role: {
       type: String,
     },
+    verify: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

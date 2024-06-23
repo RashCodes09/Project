@@ -2,6 +2,7 @@ import { dbConfig } from "@/utils/dbconfig";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs"
 import userModel from "@/utils/model/userModel"
+// import { createAdminMail } from "../../../../utils/email";
 
 export const POST = async (req: NextRequest) => {
     try {
@@ -11,17 +12,19 @@ export const POST = async (req: NextRequest) => {
       const salt = await bcrypt.genSalt(10);
       const hashed = await bcrypt.hash(password, salt);
   
-      const users = await userModel.create({
+      const admin = await userModel.create({
         email,
         password: hashed,
         name,
         role: "admin",
       });
+
+      // createAdminMail(admin)
   
       return NextResponse.json({
         status: 200,
-        message: "creating all User",
-        data: users,
+        message: "Admin Created ",
+        data: admin,
       });
     } catch (error) {
       return NextResponse.json({

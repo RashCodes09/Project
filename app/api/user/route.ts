@@ -43,10 +43,11 @@ export const GET = async () => {
         message: "creating all User",
         data: users,
       });
-    } catch (error) {
+    } catch (error:any) {
       return NextResponse.json({
         status: 404,
-        message: "Error",
+        message: error.message,
+        error
       });
     }
   };

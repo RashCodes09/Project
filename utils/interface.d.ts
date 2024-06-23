@@ -8,6 +8,7 @@ export interface iUser {
   password: string;
   avatar: string;
   role: string;
+  verify: boolean
 }
 
 export interface iUserData extends iUser, Document {}
