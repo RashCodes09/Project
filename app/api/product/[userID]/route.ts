@@ -23,6 +23,7 @@ export const GET = async () => {
   }
 };
 
+ // creating of product is only to be done by the admin
 export const POST = async (req: NextRequest, params: any) => {
   try {
     await dbConfig();
@@ -31,15 +32,15 @@ export const POST = async (req: NextRequest, params: any) => {
     const { userID } = await params.params;
     const user = await myUserModel.findById(userID);
     if (user.role === "admin") {
-      const users = await myProductModel.create({
+      const products = await myProductModel.create({
         title,
         image,
       });
 
       return NextResponse.json({
         status: 201,
-        message: "creating all User",
-        data: users,
+        message: "creating product",
+        data: products,
       });
     } else {
       return NextResponse.json({
