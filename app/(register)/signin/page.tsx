@@ -58,13 +58,13 @@ const page = () => {
         <hr />
 
         <div>
-          <p className="mt-2 text-[12px] font-semibold uppercase">
+          {/* <p className="mt-2 text-[12px] font-semibold uppercase">
             social sign In
-          </p>
+          </p> */}
 
           <button className="border rounded-md mt-4 flex w-full h-[55px] justify-center items-center text-white bg-red-600 text-[30px]">
             {/* <FaGoogle /> */}
-            G
+            GOOGLE
             {/* <span className="ml-3">Google</span> */}
           </button>
         </div>

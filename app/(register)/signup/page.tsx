@@ -1,6 +1,7 @@
 "use client";
 
-import { APP_URL } from "@/utils/constant";
+import { MONGO_LOCAL_URL } from "@/utils/constant";
+// import { APP_URL } from "@/utils/constant";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -14,9 +15,9 @@ const page = () => {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const URL: string = `/api/user`;
+    const URL: string = `/api/user/admin`;
 
-    console.log(name, email, password, { APP_URL });
+    console.log(name, email, password, { MONGO_LOCAL_URL });
     await fetch(URL, {
       method: "POST",
       headers: {
@@ -79,13 +80,13 @@ const page = () => {
         <hr />
 
         <div>
-          <p className="mt-2 text-[12px] font-semibold uppercase">
+          {/* <p className="mt-2 text-[12px] font-semibold uppercase">
             social sign up
-          </p>
+          </p> */}
 
           <button className="border rounded-md mt-4 flex w-full h-[55px] justify-center items-center text-white bg-red-600 text-[30px]">
             {/* <FaGoogle /> */}
-            G
+            GOOGLE
             {/* <span className="ml-3">Google</span> */}
           </button>
         </div>
