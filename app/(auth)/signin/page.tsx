@@ -49,8 +49,8 @@ const page = () => {
 
           <p className="mt-2 text-[12px] text-center">
             Don't have an Account{" "}
-            <Link href="/signup" className="font-semibold italic">
-              Sign up Here
+            <Link href="/register" className="font-semibold italic">
+              Sign In Here
             </Link>
           </p>
         </form>

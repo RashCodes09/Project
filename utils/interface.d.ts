@@ -2,27 +2,60 @@ import { VariantProps } from "class-variance-authority";
 import { Document } from "mongoose";
 import { ReactNode } from "react";
 
-export interface iUser {
+export interface iCompany {
+  companyName: string;
+  email: string;
+  password: string;
+  avatar: string;
+  address: string;
+  planCost: number;
+  plan: string;
+  role: string;
+  project: {}[],
+  staff: {}[]
+}
+
+export interface iCompanyData extends iCompany, Document {}
+
+export interface iStaff {
   name: string;
   email: string;
   password: string;
   avatar: string;
+  address: string;
   role: string;
-  verify: boolean
+  bio: string,
+  steps: {}[]
+  company: {}
 }
 
-export interface iUserData extends iUser, Document {}
+export interface iStaffData extends iStaff, Document {}
 
-export interface iProduct {
+export interface iProject {
   title: string;
-  image: string;
+  dueDate: Date;
+  passigned: string;
+  task: {}[]
+  company: {}
 }
 
-export interface iProductData extends iProduct, Document {}
+export interface iProjectData extends iProject, Document {}
 
-export interface iButton
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof newButtonVar> {
-  children: ReactNode;
-  icon?: ReactNode;
+
+export interface iTask {
+  title: string;
+  steps: {}[];
+  company: {};
 }
+
+export interface iTaskData extends iTask, Document {}
+
+export interface iStep {
+  title: string;
+  company: {};
+}
+
+export interface iStepData extends iStep, Document {}
+
+
+
