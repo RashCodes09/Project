@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import LandingPageHeader from "./LandingPageHeader";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { Poppins } from "next/font/google";
 import ScrollScreen from "./ScrollScreen";
 import Button from "./Button";
+import LandingPageFooter from "./LandingPageFooter";
 
 const poppins: NextFont = Poppins({
   weight: "300",
@@ -39,6 +41,7 @@ const LandingPage = () => {
       </div>
 
       <ScrollScreen />
+      <LandingPageFooter />
     </div>
   );
 };
